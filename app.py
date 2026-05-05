@@ -56,8 +56,7 @@ def view_messages():
         messages = conn.execute("SELECT * FROM messages").fetchall()
     return render_template("messages.html", messages=messages)
 
-if __name__ == "__main__":
-    app.run(debug=True, port=8000) 
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
