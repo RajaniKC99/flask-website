@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial;
+            background-color: rgb(255, 255, 255);
+            min-height: 100vh;
+        }
+
+        /* 1. Navigation: Top Right */
+        nav {
+           display: flex;
+           justify-content: space-between; 
+           align-items: center;
+           padding: 20px 60px;
+           position: fixed;
+           top: 0;
+           width: 100%;
+           background-color: #ffffff;
+           z-index: 100;
+        }
+        .nav-brand {
+            font-family: 'Great Vibes', cursive;
+            font-size: 42px;
+            font-weight: 700;
+            color: black; ;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+               font-family: 'Dancing Script', cursive;
+               font-size: 28px;
+               font-weight: 500;
+               color: black;
+               text-decoration: none;
+               display: inline-block;
+               padding: 8px 15px;
+               margin-right: 10px;
+               border-radius: 5px;
+               letter-spacing: 1px;
+        }
+
+
+        /* Box appears only on hover */
+        nav a:hover{
+            background-color: #4be5fc;
+        }
+
+
+        nav a:active{
+                background-color:  #14406a;
+            
+            }
+
+        /* Container for the Welcome Text (Left Side) */
+        .left-content {
+            flex: 1;
+            max-width: 500px;
+        }
+
+
+        .hero-section {
+            display: flex;
+            align-items: center;     /* This keeps them level with each other */
+            justify-content: space-between; /* This pushes text left and image right */
+            padding: 100px 80px 40px 80px;  /* Adds space from the screen edges */
+            min-height: 100vh;
+        
+            
+        }
+        .welcome-text {
+            color: #080808;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .description {
+            font-size: 18px;
+            color: #555;
+        }
+
+        
+
+        .right-container {
+         display: flex;
+         flex: 1; /* Takes up other 50% of width */
+         justify-content: flex-end; /* Pushes image to the far right */
+         align-items: flex-end;
+         height: calc(100vh - 100px);
+         
+         
+     }
+         
+
+     /* Image */
+    .profile-pic {
+          width: auto;
+          height: 100%;
+          display: block;
+          object-fit: contain;
+          object-position: bottom;
+     }
+        
+        
+
+        
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-brand">Rajani</div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Me</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/messages">Messages</a></li>
+        </ul>
+    </nav>
+
+    <main class="hero-section">
+
+        <div class="left-content">
+            <h1 class="welcome-text">I am <br>Rajani KC</h1>
+            <p class="description">I am a Junior Python Developer.<br>
+            I’m a passionate junior Python developer who enjoys turning ideas into working code. 
+            I’ve built small projects like contact book apps and simple tools, which helped me 
+            understand problem-solving and logic building. I’m always curious to learn more, 
+            improve my skills, and explore new areas in programming.</p>
+        </div>
+
+        <div class="right-container">
+            <img src="{{ url_for('static', filename='rajanikc.png') }}" alt="Rajani" class="profile-pic">
+        </div>
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head><title>Messages</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial;
+            background-color: rgb(255, 255, 255);
+            min-height: 100vh;
+        }
+
+        /* 1. Navigation: Top Right */
+        nav {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           padding: 20px 60px;
+           position: fixed;
+           top: 0;
+           width: 100%;
+           background-color: #ffffff;
+           z-index: 100;
+        }
+        .nav-brand {
+            font-family: 'Great Vibes', cursive;
+            font-size: 42px;
+            font-weight: 700;
+            color: black; ;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+               font-family: 'Dancing Script', cursive;
+               font-size: 28px;
+               font-weight: 500;
+               color: black;
+               text-decoration: none;
+               display: inline-block;
+               padding: 8px 15px;
+               margin-right: 10px;
+               border-radius: 5px;
+               letter-spacing: 1px;
+        }
+
+
+        /* Box appears only on hover */
+        nav a:hover{
+            background-color: #4be5fc;
+        }
+
+
+        nav a:active{
+                background-color:  #14406a;
+            
+            }
+        
+       .container {
+              padding-top: 100px;   /* pushes content below the fixed nav */
+              padding-left: 60px;
+              padding-right: 60px;
+              max-width: 900px;
+              margin: 0 auto;
+        }
+        h1 {
+            color: #060606;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        p {
+          font-size: 18px;
+          color: #555;
+          line-height: 1.8;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-brand">Rajani</div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Me</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/messages">Messages</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>All Messages</h1>
+        {% for msg in messages %}
+           <p><strong>{{ msg[1] }}</strong> - {{ msg[3] }}</p>
+           <p>{{ msg[2] }}</p>
+           <hr>
+        {% endfor %}
+    </div>
+</body>
+</html>
